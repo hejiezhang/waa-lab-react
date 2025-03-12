@@ -32,15 +32,17 @@ function Dashboard() {
         setNewTitle('');
     }
 
-    const [selectedPost, setSelectedPost] = useState(null);
+    //const [selectedPost, setSelectedPost] = useState(null);
+    const { selectedPostId, setSelectedPostId } = useContext(PostContext);
 
-    const handlePostClick = (post) => {
-        setSelectedPost(post);
+    const handlePostClick = (postId) => {
+        //setSelectedPost(post);
+        setSelectedPostId(postId);
     };
 
     const handleDeletePost = (deletedPostId) => {
         setPosts((prevPosts) => prevPosts.filter(post => post.id !== deletedPostId));
-        //setSelectedPost(null);
+        setSelectedPostId(null);
       };
 
     const handleAddPost = () => {
@@ -61,7 +63,7 @@ function Dashboard() {
                 <input type='text' value={newTitle} onChange={e => setNewTitle(e.target.value)}></input>
                 <button onClick={updateFirstPostTitle}>Change Name</button>
             </div>
-            {selectedPost && <PostDetails className="post-details" postId={selectedPost.id} onDelete={handleDeletePost} />}
+            {selectedPostId  && <PostDetails className="post-details" postId={ selectedPostId } onDelete={handleDeletePost} />}
         </div>
     )
 }
