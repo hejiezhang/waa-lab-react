@@ -31,5 +31,12 @@
     border: 1px solid blue; 
     border-radius: 8px;
   }
+
+  .add-post {
+    margin: 20px auto;
+    padding: 16px;
+    border: 1px solid blue; 
+    border-radius: 8px;
+  }
   
   
