@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Posts from "./Posts";
 import PostDetails from './PostDetails';
 import '../styles/styles.css'
-import axios from 'axios';
 import AddPost from './AddPost';
 import api from '../services/api.js'
+import { PostContext } from '../context/PostContext';
 
 function Dashboard() {
     // const [posts, setPosts] = useState([
